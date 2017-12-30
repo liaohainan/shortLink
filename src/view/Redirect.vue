@@ -1,12 +1,6 @@
 <template>
     <div>
-        <div class="search d1">
-            <input type="text" placeholder="输入链接" v-model="longLink">
-            <div class="btn" @click="getLink">生成短链接</div>
-        </div>
-        <div class="show-link">
-            <p>{{shortLink}}</p>
-        </div>
+        跳转中……
     </div>
 </template>
 <script>
@@ -17,22 +11,28 @@ export default {
             longLink:''
         }
     },
-    mounted(){
+    created(){
+        this.shortLink = this.$route.params.link || ''
+        if(this.shortLink === ''){
+            alert('链接错误')
+        }else{
+            this.getLink()
+        }
     },
     methods:{
         getLink(){
-            this.$api_post({
-                url:'/getShortLink',
+            this.$api_get({
+                url:'/getLongLink',
                 data:{
-                    longLink:this.longLink
+                    shortLink:this.shortLink
                 }
             }).then(res=>{
                 if(res.code === 200){
-                    this.shortLink = 'nan.cn/' + res.shortLink
+                    window.location.href = res.longLink
                 }else{
                     alert(res.msg)
+                    this.$router.push('/')
                 }
-                
             })
         }
     }

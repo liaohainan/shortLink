@@ -1,4 +1,4 @@
-# short
+# 短链接生成器demo
 
 > A Vue.js project
 
@@ -11,20 +11,7 @@ npm install
 # serve with hot reload at localhost:8080
 npm run dev
 
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
-
-# run unit tests
-npm run unit
-
-# run e2e tests
-npm run e2e
-
-# run all tests
-npm test
 ```
+## 使用node模拟后台数据，包括记录短链接，长链接
 
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+使用数组长度的值，转换成62进制来生成短链接
