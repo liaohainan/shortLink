@@ -28,7 +28,7 @@ export default {
                 }
             }).then(res=>{
                 if(res.code === 200){
-                    window.location.href = res.longLink
+                    // window.location.href = res.longLink
                 }else{
                     alert(res.msg)
                     this.$router.push('/')
