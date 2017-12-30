@@ -1,19 +1,17 @@
 .DS_Store
+node_modules/
+/dist/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+/test/unit/coverage/
+/test/e2e/reports/
+selenium-debug.log
 
-# Images
-images/avatars/
-images/captchas/
-images/smileys/
-images/member_photos/
-images/signature_attachments/
-images/pm_attachments/
-
-# For security do not publish the following files
-system/expressionengine/config/database.php
-system/expressionengine/config/config.php
-
-# Caches
-sized/
-thumbs/
-_thumbs/
-*/expressionengine/cache/*
+# Editor directories and files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
